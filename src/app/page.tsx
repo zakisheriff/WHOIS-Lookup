@@ -53,7 +53,7 @@ export default function Home() {
             <h1 className={styles.title}>WHOIS <span className={styles.signature}>Lookup</span></h1>
           </motion.div>
 
-          <motion.div className={styles.searchSection} variants={itemVariants} style={{ width: '100%', marginBottom: '24px' }}>
+          <motion.div className={styles.searchSection} variants={itemVariants} style={{ width: '100%', marginBottom: '36px' }}>
             <SearchInput />
           </motion.div>
 
