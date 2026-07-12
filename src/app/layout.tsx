@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Caveat } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const caveat = Caveat({
@@ -127,6 +128,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <Analytics />
       </body>
     </html>
   );
