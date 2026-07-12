@@ -11,7 +11,9 @@ export default function SearchInput({ initialValue = '' }: { initialValue?: stri
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
-  // Press "/" to focus search input
+  const [placeholder, setPlaceholder] = useState('Search domain, RDAP, DNS records...');
+
+  // Press "/" to focus search input, and manage responsive placeholder text
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === '/' && document.activeElement !== inputRef.current) {
@@ -20,7 +22,21 @@ export default function SearchInput({ initialValue = '' }: { initialValue?: stri
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+
+    const updatePlaceholder = () => {
+      if (window.innerWidth <= 640) {
+        setPlaceholder('atom.lk');
+      } else {
+        setPlaceholder('Search domain, RDAP, DNS records...');
+      }
+    };
+    updatePlaceholder();
+    window.addEventListener('resize', updatePlaceholder);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', updatePlaceholder);
+    };
   }, []);
 
   const handleInputChange = (val: string) => {
@@ -64,7 +80,7 @@ export default function SearchInput({ initialValue = '' }: { initialValue?: stri
         <input
           ref={inputRef}
           type="text"
-          placeholder="Search domain, RDAP, DNS records..."
+          placeholder={placeholder}
           value={query}
           onChange={(e) => handleInputChange(e.target.value)}
           className={styles.input}
