@@ -1,8 +1,4 @@
-<div align="center">
-  <img src="public/logo.svg" alt="WHOIS Lookup Logo" width="400" height="96" />
-</div>
-
-<br />
+# <div align="center">WHOIS Lookup</div>
 
 <div align="center">
 <strong>Free, Real-Time Domain Intelligence & WHOIS Investigation Tool</strong>
