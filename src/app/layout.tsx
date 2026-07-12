@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/'
   },
+  icons: {
+    icon: [
+      { url: '/icon.png', type: 'image/png' },
+      { url: '/logo.png', type: 'image/png' }
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'WHOIS Lookup & Domain Intelligence - The Atom',
     description: 'Instantly inspect domain registration records, RDAP, DNS, SSL certs, and security headers.',
