@@ -1,0 +1,244 @@
+/* Header Styles */
+.header {
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(3, 3, 3, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerContainer {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.logoAtom {
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.logoRing {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid rgba(255, 94, 31, 0.4);
+  border-radius: 50%;
+  animation: logoPulse 2.5s infinite linear;
+}
+
+@keyframes logoPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 0.4; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.navLinks a:hover {
+  color: var(--text-primary);
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  padding: 48px 24px;
+  margin-top: auto;
+}
+
+.footerContainer {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerCopyright {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footerBrand {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footerRight {
+  display: flex;
+  gap: 24px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Search Input Styles */
+.searchWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 99px;
+  padding: 4px 6px 4px 20px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.searchBar:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), var(--shadow-md);
+  background: var(--bg-tertiary);
+}
+
+.searchIcon {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 16px;
+  padding: 12px 0;
+  outline: none;
+  width: 100%;
+  font-family: var(--font-sans);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.shortcutHint {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  user-select: none;
+  pointer-events: none;
+}
+
+.submitBtn {
+  background: var(--accent);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 24px;
+  border-radius: 99px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.submitBtn:hover {
+  background: var(--accent-hover);
+}
+
+.submitBtn:active {
+  transform: scale(0.98);
+}
+
+.validationError {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  font-size: 0.85rem;
+  color: #ef4444;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Loader / Skeleton Styles */
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 960px;
+  margin: 40px auto;
+}
+
+.skeletonHeader {
+  height: 80px;
+  border-radius: var(--radius-md);
+}
+
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.skeletonCard {
+  height: 200px;
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 768px) {
+  .skeletonGrid {
+    grid-template-columns: 1fr;
+  }
+  .shortcutHint {
+    display: none;
+  }
+}
