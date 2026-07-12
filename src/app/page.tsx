@@ -49,7 +49,7 @@ export default function Home() {
           animate="show"
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}
         >
-          <motion.div className={styles.hero} variants={itemVariants} style={{ marginBottom: '20px' }}>
+          <motion.div className={styles.hero} variants={itemVariants} style={{ marginBottom: '8px' }}>
             <h1 className={styles.title}>WHOIS <span className={styles.signature}>Lookup</span></h1>
           </motion.div>
 
@@ -96,14 +96,14 @@ export default function Home() {
                 <line x1="6" y1="6" x2="6.01" y2="6" />
                 <line x1="6" y1="18" x2="6.01" y2="18" />
               </svg>
-              <span>Nameservers</span>
+              <span>NS</span>
             </div>
             <div className={styles.featureIconItem}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 <path d="m9 12 2 2 4-4" />
               </svg>
-              <span>Security</span>
+              <span>SEC</span>
             </div>
           </motion.div>
         </motion.div>
