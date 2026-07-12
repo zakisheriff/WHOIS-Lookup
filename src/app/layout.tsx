@@ -34,6 +34,7 @@ export const metadata: Metadata = {
         url: 'https://whoislookup.theatom.lk/og-image.png',
         width: 1200,
         height: 630,
+        type: 'image/png',
         alt: 'The Atom Domain Intelligence Platform'
       }
     ]
@@ -109,7 +110,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={caveat.variable}>
+    <html lang="en" className={caveat.variable} prefix="og: http://ogp.me/ns#">
       <head>
         <script
           type="application/ld+json"
