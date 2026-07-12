@@ -43,13 +43,11 @@
 
 .title {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 850;
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 18px;
-  background: linear-gradient(to bottom, #0f172a 60%, #334155);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #1d2226;
 }
 
 .signature {

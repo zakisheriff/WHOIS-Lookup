@@ -51,9 +51,6 @@ export default function Home() {
         >
           <motion.div className={styles.hero} variants={itemVariants} style={{ marginBottom: '32px' }}>
             <h1 className={styles.title}>WHOIS <span className={styles.signature}>Lookup</span></h1>
-            <p className={styles.subtitle}>
-              Instantly inspect domain registration, RDAP, DNS, SSL certificates, nameservers, registrar information and more.
-            </p>
           </motion.div>
 
           <motion.div className={styles.searchSection} variants={itemVariants} style={{ width: '100%' }}>
