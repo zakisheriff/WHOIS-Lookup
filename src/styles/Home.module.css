@@ -171,6 +171,48 @@
   line-height: 1.6;
 }
 
+.featureIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.featureIconItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  cursor: default;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 99px;
+}
+
+.featureIconItem:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--bg-primary);
+  transform: translateY(-1px);
+}
+
+.featureIconItem svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+}
+
+.featureIconItem span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
 @media (max-width: 1024px) {
   .featuresGrid {
     grid-template-columns: repeat(2, 1fr);
