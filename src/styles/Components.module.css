@@ -199,9 +199,8 @@
 }
 
 .validationError {
-  position: absolute;
-  top: 105%;
-  left: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
   font-size: 0.85rem;
   color: #ef4444;
   padding: 4px 8px;
