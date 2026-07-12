@@ -1,8 +1,8 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400&display=swap" rel="stylesheet">
+<div align="center">
+  <img src="public/logo.svg" alt="WHOIS Lookup Logo" width="400" height="96" />
+</div>
 
-# <div align="center">WHOIS <span style="font-family: 'Caveat', cursive; font-size: 1.25em; font-weight: 400; display: inline-block; background: linear-gradient(135deg, #2563eb, #1d4ed8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transform: rotate(-3deg) translateY(2px); padding-right: 12px; padding-bottom: 4px;">Lookup</span></div>
+<br />
 
 <div align="center">
 <strong>Free, Real-Time Domain Intelligence & WHOIS Investigation Tool</strong>
