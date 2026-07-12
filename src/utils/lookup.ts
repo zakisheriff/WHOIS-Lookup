@@ -42,7 +42,7 @@ export function queryWhoisRaw(domain: string, server: string = 'whois.iana.org')
     const socket = new net.Socket();
     let response = '';
 
-    socket.setTimeout(8000);
+    socket.setTimeout(2000);
 
     socket.connect(43, server, () => {
       socket.write(`${domain}\r\n`);
@@ -158,7 +158,7 @@ export function getSslDetails(domain: string): Promise<any> {
       }
     );
 
-    socket.setTimeout(5000);
+    socket.setTimeout(2500);
 
     socket.on('timeout', () => {
       socket.destroy();
