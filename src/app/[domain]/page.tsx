@@ -458,6 +458,16 @@ export default function DomainResult() {
                             <span className={styles.value}>{data.overview?.registrar || 'Unknown'}</span>
                           </div>
                           <div className={styles.overviewItem}>
+                            <span className={styles.label}>Registrant</span>
+                            <span className={styles.value}>{data.overview?.registrantName || 'Unknown'}</span>
+                          </div>
+                          {data.overview?.registrantEmail && data.overview.registrantEmail !== 'Unknown' && (
+                            <div className={styles.overviewItem}>
+                              <span className={styles.label}>Email</span>
+                              <span className={styles.value} style={{ fontSize: '0.85rem' }}>{data.overview.registrantEmail}</span>
+                            </div>
+                          )}
+                          <div className={styles.overviewItem}>
                             <span className={styles.label}>Created On</span>
                             <span className={styles.value}>{formatDate(data.overview?.creationDate)}</span>
                           </div>

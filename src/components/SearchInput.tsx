@@ -42,7 +42,7 @@ export default function SearchInput({ initialValue = '' }: { initialValue?: stri
   const handleInputChange = (val: string) => {
     setQuery(val);
     if (val.trim()) {
-      const cleanVal = val.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '');
+      const cleanVal = val.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '').split('/')[0].split('?')[0].split('#')[0];
       const domainRegex = /^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z]{2,})+$/;
       if (!domainRegex.test(cleanVal)) {
         setError('Invalid domain format (e.g. cloudflare.com)');
@@ -58,7 +58,7 @@ export default function SearchInput({ initialValue = '' }: { initialValue?: stri
     e.preventDefault();
     if (!query.trim()) return;
 
-    const cleanQuery = query.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '');
+    const cleanQuery = query.trim().toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '').split('/')[0].split('?')[0].split('#')[0];
     const domainRegex = /^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z]{2,})+$/;
 
     if (!domainRegex.test(cleanQuery)) {

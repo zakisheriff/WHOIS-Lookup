@@ -387,6 +387,8 @@ export async function performDomainLookup(domain: string) {
     let updatedDate = '';
     let status: string[] = [];
     let nameservers = dnsInfo.NS || [];
+    let registrantName = 'Unknown';
+    let registrantEmail = 'Unknown';
 
     const rdap = rdapInfo.status === 'fulfilled' ? rdapInfo.value : null;
     const rawWhois = whoisInfo.status === 'fulfilled' ? whoisInfo.value : '';
@@ -411,6 +413,16 @@ export async function performDomainLookup(domain: string) {
       if (rdap.status) status = rdap.status;
       if (rdap.nameservers) {
         nameservers = rdap.nameservers.map((n: any) => n.ldhName.toLowerCase());
+      }
+
+      // Extract registrant details
+      const registrantEntity = rdap.entities?.find((e: any) => e.roles?.includes('registrant'));
+      if (registrantEntity) {
+        const vcard = registrantEntity.vcardArray?.[1] || [];
+        const fnProp = vcard.find((prop: any) => prop[0] === 'fn');
+        const emailProp = vcard.find((prop: any) => prop[0] === 'email');
+        if (fnProp) registrantName = fnProp[3] || 'Unknown';
+        if (emailProp) registrantEmail = emailProp[3] || 'Unknown';
       }
     }
 
@@ -438,6 +450,18 @@ export async function performDomainLookup(domain: string) {
       }
     }
 
+    // Parse registrant details from raw WHOIS text
+    if (rawWhois) {
+      const nameMatch = rawWhois.match(/(Registrant Name|Registrant):\s*([^\r\n]+)/i);
+      const emailMatch = rawWhois.match(/(Registrant Email|Registrant Contact Email|Registrant Contact E-mail):\s*([^\r\n]+)/i);
+      if (nameMatch && (registrantName === 'Unknown' || !registrantName)) {
+        registrantName = nameMatch[2].trim();
+      }
+      if (emailMatch && (registrantEmail === 'Unknown' || !registrantEmail)) {
+        registrantEmail = emailMatch[2].trim();
+      }
+    }
+
     return {
       domain: normalizedDomain,
       success: true,
@@ -453,7 +477,9 @@ export async function performDomainLookup(domain: string) {
         ipAddressV6,
         asn: asnInfo?.asn,
         hostingProvider: asnInfo?.org,
-        reverseDns
+        reverseDns,
+        registrantName,
+        registrantEmail
       },
       dns: dnsInfo,
       ssl: sslInfo.status === 'fulfilled' ? sslInfo.value : undefined,
