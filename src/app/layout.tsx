@@ -10,20 +10,20 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: 'WHOIS Lookup & Domain Intelligence - The Atom',
   description: 'Instantly inspect domain registration records, RDAP registry outputs, DNS records, SSL certifications, reverse DNS, network ASN, and HTTP server headers.',
-  metadataBase: new URL('https://whois.theatom.lk'),
+  metadataBase: new URL('https://whoislookup.theatom.lk'),
   alternates: {
     canonical: '/'
   },
   openGraph: {
     title: 'WHOIS Lookup & Domain Intelligence - The Atom',
     description: 'Instantly inspect domain registration records, RDAP, DNS, SSL certs, and security headers.',
-    url: 'https://whois.theatom.lk',
+    url: 'https://whoislookup.theatom.lk',
     siteName: 'The Atom WHOIS',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: 'https://whois.theatom.lk/og-image.png',
+        url: 'https://whoislookup.theatom.lk/og-image.png',
         width: 1200,
         height: 630,
         alt: 'The Atom Domain Intelligence Platform'
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'WHOIS Lookup & Domain Intelligence - The Atom',
     description: 'Instantly inspect domain registration records, RDAP, DNS, SSL certs, and security headers.',
-    images: ['https://whois.theatom.lk/og-image.png']
+    images: ['https://whoislookup.theatom.lk/og-image.png']
   },
   robots: {
     index: true,
@@ -60,9 +60,9 @@ export default function RootLayout({
   const webAppSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    '@id': 'https://whois.theatom.lk/#webapp',
+    '@id': 'https://whoislookup.theatom.lk/#webapp',
     'name': 'The Atom WHOIS Lookup',
-    'url': 'https://whois.theatom.lk',
+    'url': 'https://whoislookup.theatom.lk',
     'applicationCategory': 'DeveloperApplication',
     'operatingSystem': 'All',
     'browserRequirements': 'Requires HTML5 and Javascript',

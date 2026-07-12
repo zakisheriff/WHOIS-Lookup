@@ -15,7 +15,7 @@ export default function Footer() {
           </p>
         </div>
         <div className={styles.footerRight}>
-          <a href="https://whois.theatom.lk" className={styles.link}>whois.theatom.lk</a>
+          <a href="https://whoislookup.theatom.lk" className={styles.link}>whoislookup.theatom.lk</a>
           <span>•</span>
           <a href="https://theatom.lk" target="_blank" rel="noopener noreferrer" className={styles.link}>theatom.lk</a>
         </div>

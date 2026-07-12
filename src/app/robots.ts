@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://whois.theatom.lk/sitemap.xml',
+    sitemap: 'https://whoislookup.theatom.lk/sitemap.xml',
   };
 }

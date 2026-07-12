@@ -19,14 +19,14 @@
 
 <br />
 
-<a href="https://whois.theatom.lk">
-<img src="https://img.shields.io/badge/View%20Live%20Demo-Click%20Here-0071e3?style=for-the-badge&logo=safari&logoColor=white" height="50" />
+<a href="https://whoislookup.theatom.lk">
+  <img src="https://img.shields.io/badge/View%20Live%20Demo-Click%20Here-0071e3?style=for-the-badge&logo=safari&logoColor=white" height="50" />
 </a>
 
 <br />
 <br />
 
-**[Visit Live Site: https://whois.theatom.lk](https://whois.theatom.lk)**
+**[Visit Live Site: https://whoislookup.theatom.lk](https://whoislookup.theatom.lk)**
 
 </div>
 
