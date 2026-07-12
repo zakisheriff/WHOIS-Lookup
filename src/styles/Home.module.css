@@ -52,6 +52,18 @@
   -webkit-text-fill-color: transparent;
 }
 
+.signature {
+  font-family: var(--font-signature), 'Caveat', cursive;
+  font-size: 4rem;
+  font-weight: 400;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: rotate(-3deg) translateY(2px);
+  margin-left: 6px;
+}
+
 .subtitle {
   font-size: 1.25rem;
   color: var(--text-secondary);

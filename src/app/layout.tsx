@@ -1,5 +1,11 @@
 import type { Metadata } from 'next';
+import { Caveat } from 'next/font/google';
 import './globals.css';
+
+const caveat = Caveat({
+  variable: '--font-signature',
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: 'WHOIS Lookup & Domain Intelligence - The Atom',
@@ -95,7 +101,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={caveat.variable}>
       <head>
         <script
           type="application/ld+json"

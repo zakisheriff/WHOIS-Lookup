@@ -50,7 +50,7 @@ export default function Home() {
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}
         >
           <motion.div className={styles.hero} variants={itemVariants} style={{ marginBottom: '32px' }}>
-            <h1 className={styles.title}>WHOIS Lookup</h1>
+            <h1 className={styles.title}>WHOIS <span className={styles.signature}>Lookup</span></h1>
             <p className={styles.subtitle}>
               Instantly inspect domain registration, RDAP, DNS, SSL certificates, nameservers, registrar information and more.
             </p>
